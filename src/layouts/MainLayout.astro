@@ -1,0 +1,21 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BARRON ARQ | Arquitectura y Diseño en Tigre</title>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+  </head>
+  <body class="flex flex-col min-h-screen bg-white text-neutral-900">
+    <Header />
+    <main class="flex-grow ">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,27 @@
+---
+// src/components/Card.astro
+// Este es un ejemplo básico de un componente Card
+---
+<div class="card">
+  <!-- <div class="card-content"> -->
+    <!-- <slot />  -->
+    <!-- Este es el marcador de posición para el contenido que se pasa a la card -->
+  <!-- </div> -->
+  <div class="bg-white/80 shadow-lg rounded-xl p-8 border border-gray-200 hover:shadow-2xl transition duration-300">
+  <slot />
+</div>
+</div>
+
+<!-- <style>
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+    max-width: 250px;
+  }
+</style> -->
+
+
