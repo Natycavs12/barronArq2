@@ -1,0 +1,134 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { residenciales } from "../data/residencials";
+import GalleryModal from "../components/GalleryModal.jsx";
+---
+
+<MainLayout>
+  <main class="relative w-full min-h-screen overflow-hidden bg-white text-gray-800">
+    <section class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12">
+      <div class="max-w-3xl mx-auto mb-12">
+        <h1 class="text-3xl font-bold text-gray-900 text-shadow-strong mb-6">
+          PROYECTOS RESIDENCIALES
+        </h1>
+        <h2 class="italic text-gray-600">
+          Tu casa empieza con una charla, no con un plano.
+          <br />No diseñamos casas, creamos lugares para vivir.
+        </h2>
+        <br />
+        <p class="text-base md:text-lg">
+          Cada vivienda es única. <br>Conocemos a fondo a cada cliente para diseñar
+          su lugar ideal, acompañando todo el proceso: elección del terreno,
+          implantación, diseño y asesoramiento integral. <br>Creamos espacios
+          funcionales, estéticos y duraderos, donde vivir, disfrutar y proyectar
+          el futuro.
+        </p>
+      </div>
+
+      <!-- 🏠 Grilla de proyectos -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl w-full">
+        {residenciales.map((residencial, index) => (
+          <button
+            class="block text-left group focus:outline-none w-full transition-transform duration-200 hover:scale-105"
+            type="button"
+            data-project-index={index}
+            data-project-name={residencial.nombre}
+            data-project-desc={residencial.descripcion}
+            data-project-images={JSON.stringify(residencial.imagenes)}
+            data-project-thumb={residencial.thumbnail}
+          >
+            <img
+              src={residencial.thumbnail}
+              alt={residencial.nombre}
+              class="rounded-lg shadow-md mb-2 group-hover:opacity-80 transition object-cover w-full h-48"
+              loading="lazy"
+            />
+            <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+              {residencial.nombre}
+            </h3>
+          </button>
+        ))}
+      </section>
+    </section>
+
+    <!-- Componente React para la galería -->
+    <GalleryModal client:load />
+  </main>
+</MainLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM cargado, inicializando botones...');
+    
+    const botones = document.querySelectorAll('[data-project-index]');
+    console.log(`Encontrados ${botones.length} botones de proyecto`);
+    
+    botones.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const projectIndex = parseInt(e.currentTarget.getAttribute('data-project-index'));
+        const projectName = e.currentTarget.getAttribute('data-project-name');
+        const projectDesc = e.currentTarget.getAttribute('data-project-desc');
+        const projectImages = JSON.parse(e.currentTarget.getAttribute('data-project-images'));
+        const projectThumb = e.currentTarget.getAttribute('data-project-thumb');
+        
+        console.log(`Click en proyecto: ${projectName}`);
+        
+        const proyectoSeleccionado = {
+          nombre: projectName,
+          descripcion: projectDesc,
+          imagenes: projectImages,
+          thumbnail: projectThumb
+        };
+        
+        console.log('Proyecto seleccionado:', proyectoSeleccionado);
+        
+        // Disparar evento custom para abrir el modal
+        const event = new CustomEvent('openGallery', {
+          detail: { 
+            proyecto: proyectoSeleccionado,
+            index: projectIndex 
+          }
+        });
+        document.dispatchEvent(event);
+        console.log('Evento openGallery disparado');
+      });
+    });
+  });
+</script>
+
+<!-- Estilos mejorados para el modal -->
+<style is:inline>
+  /* Scrollbar personalizado */
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  /* Asegurar que el modal esté por encima de todo */
+  .modal-open {
+    overflow: hidden;
+  }
+
+  /* Estilos para scroll en descripción */
+  .max-h-20::-webkit-scrollbar {
+    width: 4px;
+  }
+  .max-h-20::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+  }
+  .max-h-20::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+  }
+</style>
