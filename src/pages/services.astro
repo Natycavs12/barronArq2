@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import sitio_construccion from '../../public/assets/sitio_construccion.jpg';
 ---
 
 <MainLayout>
@@ -11,7 +12,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     <section class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12">
       <div class="max-w-3xl mx-auto mb-12">
          <img
-              src='public/assets/sitio_construccion.jpg'
+              src={sitio_construccion.src}
               alt='Sitio en Construcción'
               class="mb-2 group-hover:opacity-80 transition object-cover w-full h-full"
               loading="lazy"

@@ -1,6 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
+import logo from "../../public/assets/Barron_logo2.webp";
+import ej_com from "../../public/images/proyectos/comercial2.jpg";
+import ej_res from "../../public/images/proyectos/resid1.jpg";
+import boceto from "../../public/images/proyectos/boceto.webp";
 ---
 
 <MainLayout>
@@ -33,7 +37,7 @@ import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
           class="medium flex flex-col items-center justify-center text-center"
         >
           <img
-            src="/public/assets/Barron_logo2.webp"
+            src={logo.src}
             alt="Logo BarronArq sobre nosotros"
             id="logo"
             class="mb-4 drop-shadow-md"
@@ -52,12 +56,12 @@ import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
         >
           <div class="relative w-48 h-48">
             <img
-              src="/public/images/proyectos/comercial2.jpg"
+              src={ej_com.src}
               alt="Ejemplo Proyecto Comercial"
               class="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-lg -translate-x-20 opacity-90"
             />
             <img
-              src="/public/images/proyectos/resid1.jpg"
+              src={ej_res.src}
               alt="Ejemplo Proyecto Residencial"
               class="absolute bottom-0 right-0 w-40 h-40 object-cover rounded-lg shadow-md translate-x-15 translate-y-10 opacity-90"
             />
@@ -106,7 +110,7 @@ import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
         <img
           src="/public/images/proyectos/boceto.webp"
           alt="Foto Gustavo Barrón con sus hijos"
-          class="rounded-lg shadow-lg w-80 md:w-[500px]"
+          class="rounded-lg shadow-lg w-80 md:w-[500px] hidden"
         />
       </div>
     </section>
@@ -120,16 +124,16 @@ import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
       </h2>
       <div class="my-8 flex justify-center">
         <img
-          src="/public/images/proyectos/boceto.webp"
-          alt="Boceto arquitectónico"
-          class="rounded-lg shadow-lg w-80 md:w-[500px]"
+          src={boceto.src}
+          alt="Fo"
+          class="rounded-lg shadow-lg w-80 md:w-[500px] hidden" 
         />
       </div>
       <div class="my-8 flex justify-center">
         <img
-          src="/public/images/proyectos/boceto.webp"
+          src={boceto.src}
           alt="Boceto arquitectónico"
-          class="rounded-lg shadow-lg w-80 md:w-[500px]"
+          class="rounded-lg shadow-lg w-80 md:w-[500px] hidden"
         />
       </div>
       <p class="text-base md:text-lg mb-4">
@@ -187,7 +191,7 @@ import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
         >
         <div class="mt-8 flex justify-center">
           <img
-            src="/public/images/proyectos/boceto.webp"
+            src={boceto.src}
             alt="Boceto arquitectónico"
             class="rounded-lg shadow-lg w-80 md:w-[500px]"
           />
