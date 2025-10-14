@@ -18,7 +18,7 @@ export default function Carousel({ images = [] }) {
             autoplay={{ delay: 3000, disableOnInteraction: false, }}
             //   className="w-full h-96",
             loop={true}
-            className="w-full h-[87.5vh] m-0 p-0"
+            className="w-full h-full m-0 p-0"
         >
             {/* <SwiperSlide>
                 <img src="src/assets/carousel/1.png" alt="Slide 1" className="object-cover w-full h-full" />
