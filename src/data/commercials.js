@@ -6,7 +6,7 @@ export const comerciales = [
     descripcion: `
         Obra: Panadería Boulan
         Dirección: Ugarteche 3045 CABA
-        Trabajos realizados: Construcción 
+        Trabajo realizado: Construcción 
         •	80m2 cubiertos
         Comitente: Sapore Di Pane
         `,
@@ -29,13 +29,13 @@ export const comerciales = [
     descripcion: `
         Obra: Casa Libertador – Casa Velatoria
         Dirección: Congreso 1757 - CABA
-        Trabajos realizados: Proyecto, Dirección y Construcción 
+        Trabajo realizado: Proyecto, Dirección y Construcción 
         •	1350 m2 cubiertos
         Comitente: Compañía Miguel Costa SRL
         `,
     thumbnail: "/assets/commercials/Com_Casa_Libertador/entrada.jpg",
     imagenes: [
-      "/assets/commercials/Com_Casa_Libertador/entrada.JPG",
+      "/assets/commercials/Com_Casa_Libertador/entrada.jpg",
       "/assets/commercials/Com_Casa_Libertador/puerta.jpg",
       "/assets/commercials/Com_Casa_Libertador/recepcion.jpg",
       "/assets/commercials/Com_Casa_Libertador/recepcion2.jpg",
@@ -67,7 +67,7 @@ export const comerciales = [
     descripcion: `
         Obra: Farmacia I Pharm
         Dirección: Centro comercial NORDELTA
-        Trabajos realizados: Proyecto, Dirección y Construcción 
+        Trabajo realizado: Proyecto, Dirección y Construcción 
         •	650m2 cubiertos
         Comitente: I Pharm
         `,
@@ -98,7 +98,7 @@ export const comerciales = [
     descripcion: `
         Obra: Construcción local MIRLO
         Dirección: Centro Comercial NORDELTA
-        Trabajos realizados: Ejecución completa del local
+        Trabajo realizado: Ejecución completa del local
         Comitente: MIRLO
         `,
     thumbnail: "/assets/commercials/Com_Mirlo/frente.jpg",
@@ -126,7 +126,7 @@ export const comerciales = [
     descripcion: `
         Obra: Construcción local Torcuato Tasso
         Dirección: Defensa 1575 – CABA
-        Trabajos realizados: Ejecución completa del local
+        Trabajo realizado: Ejecución completa del local
         Comitente: Torcuato Tasso
         `,
     thumbnail: "/assets/commercials/Com_Torcuato_Tasso/frente.jpg",
@@ -139,6 +139,28 @@ export const comerciales = [
       "/assets/commercials/Com_Torcuato_Tasso/escenario2.jpg",
       "/assets/commercials/Com_Torcuato_Tasso/barra.jpg",
       "/assets/commercials/Com_Torcuato_Tasso/panoramica_salon.jpg",
+    ],
+  },
+    {
+    categoria: "comerciales",
+    slug: "oficina-delta",
+    nombre: "Oficina Delta",
+    descripcion: `
+        Obra: Oficina Delta
+        Dirección: Centro comercial NORDELTA
+        Trabajos realizados: Proyecto, Dirección y Construcción
+        •	120m2 cubiertos
+        Comitente: Delta Investment
+        `,
+    thumbnail: "/assets/commercials/Com_Oficina_Delta/sala_reunion.jpg",
+    imagenes: [
+      "/assets/commercials/Com_Oficina_Delta/sala_reunion.jpg",
+      "/assets/commercials/Com_Oficina_Delta/sala_reunion2.jpg",
+      "/assets/commercials/Com_Oficina_Delta/recepcion.jpg",
+      "/assets/commercials/Com_Oficina_Delta/cartel.jpg",
+      "/assets/commercials/Com_Oficina_Delta/hall_piedra.jpg",
+      "/assets/commercials/Com_Oficina_Delta/hall2.jpg",
+      "/assets/commercials/Com_Oficina_Delta/escritorios.jpg",
     ],
   },
 ];

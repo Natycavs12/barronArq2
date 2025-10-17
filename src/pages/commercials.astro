@@ -2,16 +2,36 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { comerciales } from "../data/commercials.js";
 import GalleryModal from "../components/GalleryModal.jsx";
+import fondoCom from '../../public/assets/fondo_com.jpg';
 ---
 
 <MainLayout>
   <main
     class="relative w-full min-h-screen overflow-hidden bg-white text-gray-800"
   >
+    <!-- Fondo absoluto con degradado y blur -->
+    <div class="absolute top-[64px] left-0 w-full h-[400px] -z-10">
+      <!-- Imagen de fondo -->
+      <div
+        class="w-full h-full bg-cover bg-center bg-no-repeat filter blur-sm"
+        style={{ backgroundImage: `url(${fondoCom})` }}
+      >
+      </div>
+      <!-- Overlay degradado -->
+      <div class="absolute inset-0 bg-gradient-to-b from-white/70 to-white/0">
+      </div>
+    </div>
+
     <section
       class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12"
     >
-      <div class="max-w-3xl mx-auto mb-12">
+      <!-- <div 
+  class="bg-cover bg-center bg-no-repeat py-16 bg-opacity-80 w-full"
+  style="background-image: url('/assets/fondo_com.jpg');"
+> -->
+      <div
+        class="max-w-3xl mx-auto mb-12 bg-white bg-opacity-80 p-6 rounded-lg shadow-lg"
+      >
         <h1 class="text-3xl font-bold text-gray-900 text-shadow-strong mb-6">
           PROYECTOS COMERCIALES
         </h1>
@@ -28,7 +48,7 @@ import GalleryModal from "../components/GalleryModal.jsx";
         <br />
         <p class="text-base md:text-lg">
           Desarrollamos proyectos para diversos rubros:
-          <ul>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-2l font-bold">
             <li>Gastronomía, bares, cafeterías, panaderías, restaurantes</li>
             <li>Salud, farmacias, consultorios</li>
             <li>Retail: Indumentaria, tecnología, perfumerías</li>
@@ -37,74 +57,81 @@ import GalleryModal from "../components/GalleryModal.jsx";
           </ul>
         </p>
       </div>
-
+      <!-- </div> -->
 
       <!-- 🏠 Grilla de proyectos -->
-      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl w-full">
-        {comerciales.map((comercial, index) => (
-          <button
-            class="block text-left group focus:outline-none w-full transition-transform duration-200 hover:scale-105"
-            type="button"
-            data-project-index={index}
-            data-project-name={comercial.nombre}
-            data-project-desc={comercial.descripcion}
-            data-project-images={JSON.stringify(comercial.imagenes)}
-            data-project-thumb={comercial.thumbnail}
-          >
-            <img
-              src={comercial.thumbnail}
-              alt={comercial.nombre}
-              class="rounded-lg shadow-md mb-2 group-hover:opacity-80 transition object-cover w-full h-48"
-              loading="lazy"
-            />
-            <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-              {comercial.nombre}
-            </h3>
-          </button>
-        ))}
+      <section
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl w-full"
+      >
+        {
+          comerciales.map((comercial, index) => (
+            <button
+              class="block text-left group focus:outline-none w-full transition-transform duration-200 hover:scale-105"
+              type="button"
+              data-project-index={index}
+              data-project-name={comercial.nombre}
+              data-project-desc={comercial.descripcion}
+              data-project-images={JSON.stringify(comercial.imagenes)}
+              data-project-thumb={comercial.thumbnail}
+            >
+              <img
+                src={comercial.thumbnail}
+                alt={comercial.nombre}
+                class="rounded-lg shadow-md mb-2 group-hover:opacity-80 transition object-cover w-full h-48"
+                loading="lazy"
+              />
+              <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                {comercial.nombre}
+              </h3>
+            </button>
+          ))
+        }
       </section>
-
     </section>
-        <!-- Componente React para la galería -->
+    <!-- Componente React para la galería -->
     <GalleryModal client:load />
   </main>
 </MainLayout>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM cargado, inicializando botones...');
-    
-    const botones = document.querySelectorAll('[data-project-index]');
-    console.log(`Encontrados ${botones.length} botones de proyecto`);
-    
-    botones.forEach(button => {
-      button.addEventListener('click', (e) => {
-        const projectIndex = parseInt(e.currentTarget.getAttribute('data-project-index'));
-        const projectName = e.currentTarget.getAttribute('data-project-name');
-        const projectDesc = e.currentTarget.getAttribute('data-project-desc');
-        const projectImages = JSON.parse(e.currentTarget.getAttribute('data-project-images'));
-        const projectThumb = e.currentTarget.getAttribute('data-project-thumb');
-        
-        console.log(`Click en proyecto: ${projectName}`);
-        
+  document.addEventListener("DOMContentLoaded", function () {
+    // console.log('DOM cargado, inicializando botones...');
+
+    const botones = document.querySelectorAll("[data-project-index]");
+    // console.log(`Encontrados ${botones.length} botones de proyecto`);
+
+    botones.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const projectIndex = parseInt(
+          e.currentTarget.getAttribute("data-project-index")
+        );
+        const projectName = e.currentTarget.getAttribute("data-project-name");
+        const projectDesc = e.currentTarget.getAttribute("data-project-desc");
+        const projectImages = JSON.parse(
+          e.currentTarget.getAttribute("data-project-images")
+        );
+        const projectThumb = e.currentTarget.getAttribute("data-project-thumb");
+
+        // console.log(`Click en proyecto: ${projectName}`);
+
         const proyectoSeleccionado = {
           nombre: projectName,
           descripcion: projectDesc,
           imagenes: projectImages,
-          thumbnail: projectThumb
+          thumbnail: projectThumb,
         };
-        
-        console.log('Proyecto seleccionado:', proyectoSeleccionado);
-        
+
+        // console.log('Proyecto seleccionado:', proyectoSeleccionado);
+
         // Disparar evento custom para abrir el modal
-        const event = new CustomEvent('openGallery', {
-          detail: { 
+        const event = new CustomEvent("openGallery", {
+          detail: {
             proyecto: proyectoSeleccionado,
-            index: projectIndex 
-          }
+            index: projectIndex,
+          },
         });
         document.dispatchEvent(event);
-        console.log('Evento openGallery disparado');
+        // console.log('Evento openGallery disparado');
       });
     });
   });

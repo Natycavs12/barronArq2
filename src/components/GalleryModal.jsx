@@ -112,7 +112,7 @@ const GalleryModal = () => {
         {/* Botón Cerrar */}
         <button
           onClick={handleClose}
-          className="absolute -top-12 right-0 text-white hover:text-gray-300 text-3xl font-bold z-10 rounded-full w-10 h-10 flex items-center justify-center transition-colors bg-black/50 hover:bg-black/70"
+          className="absolute top-4 right-4 text-gray-300 text-3xl font-bold z-10 rounded-full w-10 h-10 flex items-center justify-center transition-colors "
           aria-label="Cerrar galería"
         >
           &times;
@@ -172,8 +172,8 @@ const GalleryModal = () => {
         {/* Contenido principal - Área de imagen scrollable */}
         <div className="flex-1 overflow-hidden flex flex-col">
           {/* Imagen principal con contenedor scrollable */}
-          <div className="flex-1 flex items-center justify-center bg-gray-50 overflow-hidden p-4">
-            <div className="relative w-full h-full flex items-center justify-center">
+          <div className="flex-1 flex items-center justify-center bg-gray-50 overflow-auto p-4">
+            <div className="relative w-full h-full max-h-[80vh] flex items-center justify-center">
               <img
                 src={proyecto.imagenes[imagenActualIndex]}
                 alt={`${proyecto.nombre} - Imagen ${imagenActualIndex + 1}`}

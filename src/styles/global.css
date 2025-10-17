@@ -24,7 +24,7 @@
   opacity: 0.9;
 }
 
-.navigation ul {
+#navigation ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@
   padding: 20;
 }
 
-.navigation {
+#navigation {
   display: flex;
   /* align-items: start; */
   flex-direction: column;

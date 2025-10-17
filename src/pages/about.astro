@@ -5,6 +5,7 @@ import logo from "../../public/assets/Barron_logo2.webp";
 import ej_com from "../../public/images/proyectos/comercial2.jpg";
 import ej_res from "../../public/images/proyectos/resid1.JPG";
 import boceto from "../../public/images/proyectos/boceto.webp";
+import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.pdf";
 ---
 
 <MainLayout>
@@ -108,7 +109,7 @@ import boceto from "../../public/images/proyectos/boceto.webp";
       <!-- aca va foto de los 3 -->
       <div class="mt-8 flex justify-center">
         <img
-          src="/public/images/proyectos/boceto.webp"
+          src={boceto.src}
           alt="Foto Gustavo Barrón con sus hijos"
           class="rounded-lg shadow-lg w-80 md:w-[500px] hidden"
         />
@@ -125,14 +126,14 @@ import boceto from "../../public/images/proyectos/boceto.webp";
       <div class="my-8 flex justify-center">
         <img
           src={boceto.src}
-          alt="Fo"
+          alt="Foto Gustavo con sus hijos trabajando"
           class="rounded-lg shadow-lg w-80 md:w-[500px] hidden" 
         />
       </div>
       <div class="my-8 flex justify-center">
         <img
           src={boceto.src}
-          alt="Boceto arquitectónico"
+          alt="Foto 2 Gustavo con sus hijos trabajando"
           class="rounded-lg shadow-lg w-80 md:w-[500px] hidden"
         />
       </div>
@@ -184,7 +185,7 @@ import boceto from "../../public/images/proyectos/boceto.webp";
           class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition"
         >
           <a
-            href="/public/docs/Antecedentes_personales_GBarron.pdf"
+            href={pdf_experiencia}
             rel="noopener noreferrer"
             target="_blank">EXPERIENCIA PROFESIONAL</a
           ></button

@@ -1,21 +1,48 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import logoWhatsapp from "../../public/assets/WhatsApp_icon.png.webp";
+import About from "../pages/about.astro";
 ---
+
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BARRON ARQ | Arquitectura y Diseño en Tigre</title>
-    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-yXX4Z3gh8XYD3sBtK0U8UuQqprW+e2nG8bkLWX3nG83sQqPq5Lr+Q5ztfD9hM8ehRQxjZ5yyuU1EZX+fXzZdw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body class="flex flex-col min-h-screen bg-white text-neutral-900">
     <Header />
-    <main class="flex-grow ">
+    <main class="flex-grow">
       <slot />
     </main>
+    <!-- <About /> -->
+    <a
+      class="whatsapp-btn"
+      href="https://api.whatsapp.com/send?text=Buen%20día,%20quisiera%20consultar%20sobre%20&phone=5491151168886"
+      target="_blank"
+      title="Chatea con Nosotros"
+    >
+      <img
+        src={logoWhatsapp.src}
+        alt="Logo Whatsapp"
+        class="fixed bottom-40 right-4 w-18 h-18 z-50 cursor-pointer"
+      />
+    </a>
+    <!-- <About /> -->
     <Footer />
   </body>
 </html>
