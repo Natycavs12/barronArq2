@@ -6,8 +6,20 @@ import GalleryModal from "../components/GalleryModal.jsx";
 
 <MainLayout>
   <main class="relative w-full min-h-screen overflow-hidden bg-white text-gray-800">
+        <!-- Fondo absoluto con degradado y blur -->
+    <div class="absolute top-[64px] left-0 w-full h-screen z-10 overflow-hidden">
+      <!-- Imagen de fondo -->
+      <div
+        class="w-full h-full bg-cover bg-center bg-no-repeat filter "
+        style="background-image: url('/assets/fondo_res.JPG');"
+      >
+      </div>
+      <!-- Overlay degradado -->
+      <div class="absolute inset-0 bg-gradient-to-b from-white/70 to-white/0">
+      </div>
+    </div>
     <section class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12">
-      <div class="max-w-3xl mx-auto mb-12">
+      <div class="max-w-3xl mx-auto mb-12 bg-white bg-opacity-20 p-6 rounded-lg shadow-lg">
         <h1 class="text-3xl font-bold text-gray-900 text-shadow-strong mb-6">
           PROYECTOS RESIDENCIALES
         </h1>
@@ -58,10 +70,10 @@ import GalleryModal from "../components/GalleryModal.jsx";
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM cargado, inicializando botones...');
+    // console.log('DOM cargado, inicializando botones...');
     
     const botones = document.querySelectorAll('[data-project-index]');
-    console.log(`Encontrados ${botones.length} botones de proyecto`);
+    // console.log(`Encontrados ${botones.length} botones de proyecto`);
     
     botones.forEach(button => {
       button.addEventListener('click', (e) => {
@@ -80,7 +92,7 @@ import GalleryModal from "../components/GalleryModal.jsx";
           thumbnail: projectThumb
         };
         
-        console.log('Proyecto seleccionado:', proyectoSeleccionado);
+        // console.log('Proyecto seleccionado:', proyectoSeleccionado);
         
         // Disparar evento custom para abrir el modal
         const event = new CustomEvent('openGallery', {
@@ -90,7 +102,7 @@ import GalleryModal from "../components/GalleryModal.jsx";
           }
         });
         document.dispatchEvent(event);
-        console.log('Evento openGallery disparado');
+        // console.log('Evento openGallery disparado');
       });
     });
   });
