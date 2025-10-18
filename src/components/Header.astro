@@ -3,62 +3,75 @@ import logo_header from "../../public/assets/logo.webp";
 ---
 
 <header
-  class="flex justify-between items-center w-full text-white bg-black/70 px-4 relative z-50"
+  class="flex justify-around items-center w-full text-white bg-black/80 px-4 fixed top-0 left-0 z-50 h-24"
 >
-  <div id="navbar">
+  <!-- <div id="navbar" class="flex items-center justify-between w-full"> -->
+  <!-- <div class="flex items-center justify-between w-full"> -->
+
     <!-- Logo -->
-    <div id="logo">
-      <a href="/" target="_blank" rel="noopener noreferrer">
-        <img
-          src={logo_header.src}
-          alt="Logo BarronArq"
-          id="logo"
-          class="h-12 w-auto"
-        />
-      </a>
+  <div id="logo" class="flex items-center gap-4">
+    <a href="/" target="_blank" rel="noopener noreferrer">
+      <img
+        src={logo_header.src}
+        alt="Logo BarronArq"
+        id="img-logo"
+        class="h-[10vh] max-h-20 w-auto object-contain"
+      />
+    </a>
+  </div>
 
-      <!-- Botón menú hamburguesa -->
-      <button
-        id="menu-btn"
-        class="md:hidden focus:outline-none"
-        aria-label="Abrir menú"
-      >
-        <svg
-          class="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
+  <!-- Botón menú hamburguesa -->
+  <button
+    id="menu-btn"
+    class="md:hidden focus:outline-none"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    <svg
+      class="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
 
-    <!-- Menú principal (desktop) -->
-    <nav id="navigation" class="hidden md:flex space-x-6">
-      <ul>
-        <li><a href="/">INICIO</a></li>
-        <li><a href="/about">QUIENES SOMOS</a></li>
-        <li><a href="/residencials">OBRAS RESIDENCIALES</a></li>
-        <li><a href="/commercials">OBRAS COMERCIALES</a></li>
-        <li>
-          <a href="/services">OTROS SERVICIOS</a><li>
-            <li><a href="/contact">CONTACTO</a></li>
-          </li>
-        </li>
-      </ul>
-    </nav>
+  <!-- Menú principal (desktop) -->
+  <nav id="navigation" class="hidden md:flex items-center space-x-6">
+    <ul class="flex items-center gap-6">
+      <li><a href="/" class="hover:underline">INICIO 
+      </a> </li>
+      <li><a href="/about" class="hover:underline">QUIENES SOMOS 
+      </a> </li>
+      <li><a href="/residencials" class="hover:underline">OBRAS RESIDENCIALES 
+      </a></li>
+      <li><a href="/commercials" class="hover:underline">OBRAS COMERCIALES
+      </a></li>
+      <li><a href="/services" class="hover:underline">OTROS SERVICIOS
+      </a></li>
+      <li><a href="/contact" class="hover:underline">CONTACTO
+      </a></li>
+    </ul>
+     <!-- </nav> -->
+    <!-- </div> -->
 
     <!-- Menú lateral móvil -->
     <div
       id="mobile-menu"
-      class="fixed top-0 right-0 w-2/3 h-full bg-black text-white flex flex-col items-start p-6 space-y-4 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+      class="fixed top-0 right-0 w-2/3 h-full bg-black text-white flex flex-col items-start p-6 space-y-4 transform translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden"
+      aria-hidden="true"
     >
-      <button id="close-menu" class="self-end mb-4">
+      <button
+        id="close-menu"
+        class="self-end mb-4 focus:outline-none"
+        aria-label="Cerrar menú"
+      >
         <svg
           class="w-6 h-6"
           fill="none"
@@ -76,13 +89,11 @@ import logo_header from "../../public/assets/logo.webp";
       <a href="/about" class="w-full border-b border-gray-700 pb-2"
         >QUIÉNES SOMOS</a
       >
-      <a
-        href="/projects/residenciales"
-        class="w-full border-b border-gray-700 pb-2">OBRAS RESIDENCIALES</a
+      <a href="/residencials" class="w-full border-b border-gray-700 pb-2"
+        >OBRAS RESIDENCIALES</a
       >
-      <a
-        href="/projects/comerciales"
-        class="w-full border-b border-gray-700 pb-2">OBRAS COMERCIALES</a
+      <a href="/commercials" class="w-full border-b border-gray-700 pb-2"
+        >OBRAS COMERCIALES</a
       >
       <a href="/services" class="w-full border-b border-gray-700 pb-2"
         >OTROS SERVICIOS</a
@@ -107,5 +118,8 @@ import logo_header from "../../public/assets/logo.webp";
         mobileMenu.classList.add("translate-x-full");
       });
     </script>
-  </div>
+    <!-- </div> -->
+    <!-- </ul>-->
+ </nav> 
+  <!-- </nav> -->
 </header>

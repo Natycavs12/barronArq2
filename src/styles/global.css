@@ -8,7 +8,7 @@
   height: 80px;
   /* background-color: rgba(255, 255, 255, 0.95); */
   /* background-color: rgb(119, 119, 119); */
-  background-color: rgb(80, 80, 80);
+  /* background-color: rgb(80, 80, 80); */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -24,7 +24,7 @@
   opacity: 0.9;
 }
 
-#navigation ul {
+/* #navigation ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -36,11 +36,11 @@
 #navigation {
   display: flex;
   /* align-items: start; */
-  flex-direction: column;
+  /*flex-direction: column;
   justify-content: center;
   padding: 16px;
   opacity: 0.9;
-}
+} */
 
 li {
   margin: 0;
