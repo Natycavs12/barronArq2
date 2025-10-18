@@ -8,7 +8,7 @@ import logo_header from "../../public/assets/logo.webp";
   <!-- <div id="navbar" class="flex items-center justify-between w-full"> -->
   <!-- <div class="flex items-center justify-between w-full"> -->
 
-    <!-- Logo -->
+  <!-- Logo -->
   <div id="logo" class="flex items-center gap-4">
     <a href="/" target="_blank" rel="noopener noreferrer">
       <img
@@ -23,7 +23,7 @@ import logo_header from "../../public/assets/logo.webp";
   <!-- Botón menú hamburguesa -->
   <button
     id="menu-btn"
-    class="md:hidden focus:outline-none"
+    class="block md:hidden focus:outline-none"
     aria-label="Abrir menú"
     aria-expanded="false"
     aria-controls="mobile-menu"
@@ -45,81 +45,98 @@ import logo_header from "../../public/assets/logo.webp";
   <!-- Menú principal (desktop) -->
   <nav id="navigation" class="hidden md:flex items-center space-x-6">
     <ul class="flex items-center gap-6">
-      <li><a href="/" class="hover:underline">INICIO 
-      </a> </li>
-      <li><a href="/about" class="hover:underline">QUIENES SOMOS 
-      </a> </li>
-      <li><a href="/residencials" class="hover:underline">OBRAS RESIDENCIALES 
-      </a></li>
-      <li><a href="/commercials" class="hover:underline">OBRAS COMERCIALES
-      </a></li>
-      <li><a href="/services" class="hover:underline">OTROS SERVICIOS
-      </a></li>
-      <li><a href="/contact" class="hover:underline">CONTACTO
-      </a></li>
+      <li><a href="/" class="hover:underline">INICIO </a></li>
+      <li><a href="/about" class="hover:underline">QUIENES SOMOS </a></li>
+      <li>
+        <a href="/residencials" class="hover:underline">OBRAS RESIDENCIALES </a>
+      </li>
+      <li>
+        <a href="/commercials" class="hover:underline">OBRAS COMERCIALES </a>
+      </li>
+      <li><a href="/services" class="hover:underline">OTROS SERVICIOS </a></li>
+      <li><a href="/contact" class="hover:underline">CONTACTO </a></li>
     </ul>
-     <!-- </nav> -->
-    <!-- </div> -->
+  </nav>
+  <!-- </div> -->
 
-    <!-- Menú lateral móvil -->
-    <div
-      id="mobile-menu"
-      class="fixed top-0 right-0 w-2/3 h-full bg-black text-white flex flex-col items-start p-6 space-y-4 transform translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden"
-      aria-hidden="true"
+  <!-- Menú lateral móvil -->
+  <div
+    id="mobile-menu"
+    class="fixed top-0 right-0 w-2/3 h-full bg-black text-white flex flex-col items-start p-6 space-y-4 transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+  >
+    <button
+      id="close-menu"
+      class="self-end mb-4 focus:outline-none"
+      aria-label="Cerrar menú"
     >
-      <button
-        id="close-menu"
-        class="self-end mb-4 focus:outline-none"
-        aria-label="Cerrar menú"
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
       >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <a href="/" class="w-full border-b border-gray-700 pb-2">INICIO</a>
-      <a href="/about" class="w-full border-b border-gray-700 pb-2"
-        >QUIÉNES SOMOS</a
-      >
-      <a href="/residencials" class="w-full border-b border-gray-700 pb-2"
-        >OBRAS RESIDENCIALES</a
-      >
-      <a href="/commercials" class="w-full border-b border-gray-700 pb-2"
-        >OBRAS COMERCIALES</a
-      >
-      <a href="/services" class="w-full border-b border-gray-700 pb-2"
-        >OTROS SERVICIOS</a
-      >
-      <a href="/contact" class="w-full border-b border-gray-700 pb-2"
-        >CONTACTO</a
-      >
-    </div>
-
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const closeBtn = document.getElementById("close-menu");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-full");
-        mobileMenu.classList.add("translate-x-0");
-      });
-
-      closeBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-0");
-        mobileMenu.classList.add("translate-x-full");
-      });
-    </script>
-    <!-- </div> -->
-    <!-- </ul>-->
- </nav> 
-  <!-- </nav> -->
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <a href="/" class="w-full border-b border-gray-700 pb-2">INICIO</a>
+    <a href="/about" class="w-full border-b border-gray-700 pb-2"
+      >QUIÉNES SOMOS</a
+    >
+    <a href="/residencials" class="w-full border-b border-gray-700 pb-2"
+      >OBRAS RESIDENCIALES</a
+    >
+    <a href="/commercials" class="w-full border-b border-gray-700 pb-2"
+      >OBRAS COMERCIALES</a
+    >
+    <a href="/services" class="w-full border-b border-gray-700 pb-2"
+      >OTROS SERVICIOS</a
+    >
+    <a href="/contact" class="w-full border-b border-gray-700 pb-2">CONTACTO</a>
+  </div>
 </header>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const root = document.documentElement;
+
+    if (!menuBtn || !mobileMenu) return;
+
+    const openMenu = () => {
+      mobileMenu.classList.remove("translate-x-full");
+      mobileMenu.classList.add("translate-x-0");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      menuBtn.setAttribute("aria-expanded", "true");
+      root.classList.add("overflow-hidden");
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove("translate-x-0");
+      mobileMenu.classList.add("translate-x-full");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      menuBtn.setAttribute("aria-expanded", "false");
+      root.classList.remove("overflow-hidden");
+    };
+
+    menuBtn.addEventListener("click", openMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (
+        e.key === "Escape" &&
+        mobileMenu.getAttribute("aria-hidden") === "false"
+      ) {
+        closeMenu();
+      }
+    });
+  });
+</script>
