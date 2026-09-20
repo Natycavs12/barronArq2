@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import fotoGustavo from "../../public/images/personales/fotoGustavoBarron.jpg";
 import logo from "../../public/assets/Barron_logo2.webp";
 import ej_com from "../../public/images/proyectos/comercial2.jpg";
-import ej_res from "../../public/images/proyectos/resid1.JPG";
+import ej_res from "../../public/images/proyectos/resid1.jpg";
 import boceto from "../../public/images/proyectos/boceto.webp";
 import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.pdf";
 ---
@@ -77,33 +77,30 @@ import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.p
       class="bio max-w-5xl mx-auto text-justify leading-relaxed px-6 md:px-12 mb-12"
     >
       <p class="text-base md:text-lg">
-        Soy <span class="font-semibold">Gustavo Barrón</span>, nacido en Buenos
-        Aires en 1965, arquitecto recibido en la Facultad de Arquitectura,
-        Diseño y Urbanismo (FADU – UBA) en 1995. Desde mis primeros pasos
-        profesionales me formé en empresas constructoras y en estudios de gran
-        trayectoria, lo que me permitió adquirir una experiencia sólida en
-        proyectos y obras de muy distinta escala: desde viviendas familiares
-        hasta desarrollos comerciales, educativos y edificios de mayor
-        complejidad. <br /><br />
-        En el año 2001 decidí independizarme y, desde entonces, he trabajado en el
-        desarrollo de proyectos propios y construcciones. En 2005 fundé <span
-          class="font-semibold"
-        >
-          Arquiobra del Plata</span
-        >, empresa constructora que junto al estudio <span
-          class="font-semibold"
-        >
-          BARRÓN Arquitectura</span
-        > conforman hoy un equipo capaz de brindar un servicio integral: desde la
-        idea inicial del cliente hasta la concreción final de la obra. <br /><br
-        />
-        Actualmente, me acompaña una nueva generación: mis dos hijos, actualmente
-        estudiantes de arquitectura de la UBA, que poco a poco van sumando trabajo
-        con su mirada y su energía. Esto le da continuidad al proyecto y nos permite
-        combinar la experiencia con la frescura de nuevas ideas. <br /><br
-        />Nuestro compromiso siempre ha sido el mismo: diseñar y construir con
-        calidad, eficiencia y creatividad, buscando superar las expectativas de
-        cada cliente.
+        <span class="font-semibold">BARRÓN Arquitectura</span> es un estudio de arquitectura
+        y diseño con más de 30 años de trayectoria, dedicado al desarrollo de proyectos
+        residenciales, comerciales y corporativos. Abordamos cada proyecto de manera
+        integral, combinando diseño, funcionalidad, estética y experiencia constructiva.
+        <br /><br />
+        El estudio es dirigido por el <span class="font-semibold"
+          >Arq. Gustavo Barrón</span
+        >, egresado de la Facultad de Arquitectura, Diseño y Urbanismo de la
+        Universidad de Buenos Aires (FADU - UBA), con una amplia trayectoria en
+        el desarrollo y ejecución de proyectos y obras de distintas escalas y
+        tipologías.
+        <br /><br />
+        Actualmente se incorporan al estudio <span class="font-semibold"
+          >Pedro y Marcos Barrón</span
+        >, representando una nueva generación que suma nuevas ideas,
+        herramientas y tecnologías. Esta integración nos permite combinar
+        experiencia y trayectoria con una mirada joven y contemporánea, dando
+        continuidad a un estudio que sigue evolucionando.
+        <br /><br />
+        Creemos en una arquitectura que nace de <span class="font-semibold"
+          >escuchar e interpretar las necesidades de cada cliente</span
+        >, transformándolas en espacios funcionales, sensibles y duraderos.
+        Acompañamos cada proyecto de manera personalizada, cuidando el diseño,
+        los detalles y la calidad en cada etapa.
       </p>
       <!-- <img src="" alt=""> -->
       <!-- aca va foto de los 3 -->
@@ -127,7 +124,7 @@ import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.p
         <img
           src={boceto.src}
           alt="Foto Gustavo con sus hijos trabajando"
-          class="rounded-lg shadow-lg w-80 md:w-[500px] hidden" 
+          class="rounded-lg shadow-lg w-80 md:w-[500px] hidden"
         />
       </div>
       <div class="my-8 flex justify-center">
@@ -156,17 +153,17 @@ import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.p
             </li>
             <li>
               <span class="font-semibold">Diseñamos pensando en vos:</span> combinamos
-              creatividad, funcionalidad y estilo, para que cada espacio refleje
-              tu personalidad.
+              creatividad, funcionalidad y estilo, para que cada espacio refleje tu
+              personalidad.
             </li>
             <li>
               <span class="font-semibold">Visualizamos tu proyecto:</span> con imágenes
               y renders realistas, vas a ver tu idea antes de construir.
             </li>
             <li>
-              <span class="font-semibold">Construimos con seguridad:</span> cada
-              etapa supervisada y coordinada, asegurando calidad, plazos y respeto
-              por el diseño original.
+              <span class="font-semibold">Construimos con seguridad:</span> cada etapa
+              supervisada y coordinada, asegurando calidad, plazos y respeto por el
+              diseño original.
             </li>
           </ul>
         </ul>
@@ -184,10 +181,8 @@ import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.p
           type="button"
           class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition"
         >
-          <a
-            href={pdf_experiencia}
-            rel="noopener noreferrer"
-            target="_blank">EXPERIENCIA PROFESIONAL</a
+          <a href={pdf_experiencia} rel="noopener noreferrer" target="_blank"
+            >EXPERIENCIA PROFESIONAL</a
           ></button
         >
         <div class="mt-8 flex justify-center">
@@ -199,6 +194,5 @@ import pdf_experiencia from "../../public/docs/Antecedentes_personales_GBarron.p
         </div>
       </div>
     </section>
-
   </main>
 </MainLayout>

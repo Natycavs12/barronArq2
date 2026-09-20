@@ -2,34 +2,60 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { residenciales } from "../data/residencials";
 import GalleryModal from "../components/GalleryModal.jsx";
+import Carousel from "../components/Carousel.jsx";
+
+// Importación de las imágenes para el carrusel
+import slide1 from "../assets/carousel/1.png";
+import slide2 from "../assets/carousel/2.jpg";
+import slide3 from "../assets/carousel/3.png";
+import slide4 from "../assets/carousel/4.jpg";
+import slide5 from "../assets/carousel/5.jpg";
+import slide6 from "../assets/carousel/6.jpg";
+
+const homeImages = [slide1, slide2, slide3, slide4, slide5, slide6];
 ---
 
 <MainLayout>
-  <main
+  <!-- <main
     class="relative w-full min-h-screen overflow-hidden bg-white text-gray-800"
-  >
+  > -->
+  <main class="relative min-h-screen">
+    <!-- Carrusel de fondo -->
+    <div class="fixed inset-0 -z-20 overflow-hidden">
+      <div class="scale-105 blur-sm">
+        <Carousel client:load images={homeImages} />
+      </div>
+    </div>
+
     <!-- Fondo absoluto con degradado y blur -->
-    <div class="absolute left-0 w-full h-screen z-10 overflow-hidden">
-      <!-- Imagen de fondo -->
-      <div
+    <!-- <div class="absolute left-0 w-full h-screen z-10 overflow-hidden"> -->
+    <!-- Imagen de fondo -->
+    <!-- <div
         class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat bg-fixed"
         style="background-image: url('/assets/fondo_res.JPG');"
       >
-      </div>
-      <!-- Overlay degradado -->
-      <!-- <div class="absolute inset-0 bg-gradient-to-b from-white/70 to-white/0">
       </div> -->
-    </div>
+    <!-- Overlay degradado -->
+    <!-- <div class="absolute inset-0 bg-gradient-to-b from-white/70 to-white/0">
+      </div> -->
+    <!-- </div> -->
 
     <section
       class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12"
     >
-      <div
-        class="max-w-3xl mx-auto mb-12 bg-white bg-opacity-20 p-6 rounded-lg shadow-lg"
-      >
-        <h1 class="text-3xl font-bold text-gray-900 text-shadow-strong mb-6">
+      <div class="grid gap-8 max-w-3xl mx-auto pt-6 md:pt-6">
+        <h3
+          class="text-3xl md:text-4xl font-semibold mb-12 tracking-tight font-gothic text-center bg-black/30 backdrop-blur-sm text-white p-6 rounded-lg shadow-xl"
+        >
           PROYECTOS RESIDENCIALES
-        </h1>
+        </h3>
+      </div>
+      <div
+        class="max-w-3xl mx-auto mb-12 bg-white bg-opacity-20 p-6 rounded-lg shadow-lg relative z-20"
+      >
+        <!-- <h1 class="text-3xl font-bold text-gray-900 text-shadow-strong mb-6">
+          PROYECTOS RESIDENCIALES
+        </h1> -->
         <h2 class="italic text-gray-600">
           Tu casa empieza con una charla, no con un plano.
           <br />No diseñamos casas, creamos lugares para vivir.
@@ -89,12 +115,12 @@ import GalleryModal from "../components/GalleryModal.jsx";
     botones.forEach((button) => {
       button.addEventListener("click", (e) => {
         const projectIndex = parseInt(
-          e.currentTarget.getAttribute("data-project-index")
+          e.currentTarget.getAttribute("data-project-index"),
         );
         const projectName = e.currentTarget.getAttribute("data-project-name");
         const projectDesc = e.currentTarget.getAttribute("data-project-desc");
         const projectImages = JSON.parse(
-          e.currentTarget.getAttribute("data-project-images")
+          e.currentTarget.getAttribute("data-project-images"),
         );
         const projectThumb = e.currentTarget.getAttribute("data-project-thumb");
 

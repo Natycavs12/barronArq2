@@ -53,7 +53,7 @@ import logo_header from "../../public/assets/logo.webp";
       <li>
         <a href="/commercials" class="hover:underline">OBRAS COMERCIALES </a>
       </li>
-      <li><a href="/services" class="hover:underline">OTROS SERVICIOS </a></li>
+      <li><a href="/services" class="hover:underline">SERVICIOS DE ARQUITECTURA</a></li>
       <li><a href="/contact" class="hover:underline">CONTACTO </a></li>
     </ul>
   </nav>
@@ -110,7 +110,8 @@ import logo_header from "../../public/assets/logo.webp";
     const openMenu = () => {
       mobileMenu.classList.remove("translate-x-full");
       mobileMenu.classList.add("translate-x-0");
-      mobileMenu.setAttribute("aria-hidden", "false");
+      mobileMenu.inert = false;
+      // mobileMenu.setAttribute("aria-hidden", "false");
       menuBtn.setAttribute("aria-expanded", "true");
       root.classList.add("overflow-hidden");
     };
@@ -118,7 +119,8 @@ import logo_header from "../../public/assets/logo.webp";
     const closeMenu = () => {
       mobileMenu.classList.remove("translate-x-0");
       mobileMenu.classList.add("translate-x-full");
-      mobileMenu.setAttribute("aria-hidden", "true");
+      mobileMenu.inert = true;
+      // mobileMenu.setAttribute("aria-hidden", "true");
       menuBtn.setAttribute("aria-expanded", "false");
       root.classList.remove("overflow-hidden");
     };
@@ -133,7 +135,7 @@ import logo_header from "../../public/assets/logo.webp";
     document.addEventListener("keydown", (e) => {
       if (
         e.key === "Escape" &&
-        mobileMenu.getAttribute("aria-hidden") === "false"
+        !mobileMenu.inert
       ) {
         closeMenu();
       }

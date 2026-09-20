@@ -1,23 +1,85 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import sitio_construccion from '../../public/assets/sitio_construccion.jpg';
+import Card from "../components/Card.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-	<!-- <Welcome /> -->
-	 <!-- <div class="bg-red-500 text-white p-6 text-center">
-    otros servicios
-    </div> -->
-      <main class="relative w-full min-h-screen overflow-hidden bg-white text-gray-800">
-    <section class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12">
-      <div class="max-w-3xl mx-auto mb-12">
-         <img
-              src={sitio_construccion.src}
-              alt='Sitio en Construcción'
-              class="mb-2 group-hover:opacity-80 transition object-cover w-full h-full"
-              loading="lazy"
-            />
+  <main
+    class="relative w-full min-h-screen overflow-hidden bg-white text-gray-800"
+    style="background-image: url('/assets/fondo_servicios.png'); background-size: cover; background-position: center;"
+  >
+
+    <section
+      class="presentation relative z-20 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12"
+    >
+      <div class="grid gap-8 max-w-3xl mx-auto pt-6 md:pt-6">
+        <h2
+          class="text-3xl md:text-5xl text-center mb-4 font-semibold tracking-tight text-gray-800 font-gothic"
+        >
+          Servicios de arquitectura
+        </h2>
+
+        <!-- <h3  
+          class="text-xl md:text-3xl font-medium mb-20 text-gray-600 leading-relaxed font-gothic"
+        >
+          Nos adaptamos a los requerimientos técnicos de cada obra y gestionamos
+          la documentación necesaria para garantizar trazabilidad y formalidad
+          en cada proyecto.
+        </h3> -->
+      </div>
+
+      <!-- <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4"
+      > -->
+      <!-- <div>
+
+        <Card title="Dirección de obra" />
+        <Card title="Interiorismo" />
+        <Card title="Remodelaciones" />
+        <Card title="Documentación" />
+        <Card title="Asesoramiento" />
+      </div> -->
+      <section class="medium relative text-center px-6 mt-12 z-40">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <Card>
+            <h4 class="text-xl font-semibold mb-2">Dirección de obra</h4>
+            <p class="mb-6">
+              “Acompañamos cada etapa del proyecto para transformar ideas en
+              obras duraderas y bien pensadas.”
+            </p>
+          </Card>
+
+          <Card>
+            <h4 class="text-xl font-semibold mb-2">Interiorismo</h4>
+            <p class="mb-6">
+              “Diseñamos espacios interiores que combinan funcionalidad,
+              estética y confort, reflejando la identidad de cada cliente.”
+            </p>
+          </Card>
+
+          <Card>
+            <h4 class="text-xl font-semibold mb-2">Remodelaciones</h4>
+            <p class="mb-6">
+              “Actualizamos espacios existentes para mejorar su funcionalidad y
+              estética.”
+            </p>
+          </Card>
+          <Card>
+            <h4 class="text-xl font-semibold mb-2">Documentación</h4>
+            <p class="mb-6">
+              “Gestionamos la documentación necesaria para garantizar trazabilidad
+              y formalidad en cada proyecto.”
+            </p>
+          </Card>
+          <Card>
+            <h4 class="text-xl font-semibold mb-2">Asesoramiento</h4>
+            <p class="mb-6">
+              “Proporcionamos orientación experta para tomar decisiones informadas
+              en el proceso de diseño y construcción.”
+            </p>
+          </Card>
         </div>
-        </section>
-        </main> 
+      </section>
+    </section>
+  </main>
 </MainLayout>
